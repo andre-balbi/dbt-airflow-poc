@@ -14,7 +14,7 @@ profile_config_01 = ProfileConfig(  # substitua pelo nome do profile_config adeq
         profile_args={
             "project": "dbt-airflow-469721",  # substitua pelo ID do seu projeto GCP
             "dataset": "prod",  # substitua pelo prefixo (dev_, stg_, prod_) do seu dataset no BigQuery
-            "keyfile_json": os.environ.get("GCP_SERVICE_ACCOUNT_KEY")  # keyfile via variável de ambiente
+            "keyfile": "/usr/local/airflow/dbt/project_01/dbt-airflow-469721-26c5256c1285.json"  # substitua pelo caminho (docker) do seu arquivo de chave de conta de serviço
         }
     )
 )

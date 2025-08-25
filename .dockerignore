@@ -11,4 +11,3 @@ venv
 airflow.db
 airflow.cfg
 CLAUDE.md
-dags/
