@@ -4,10 +4,17 @@ astro
 **/.env.*
 airflow_settings.yaml
 logs/
+**/.venv/
+**/venv/
 **/.venv
 **/venv
+.venv/
+venv/
 .venv
 venv
+dags/**/.venv/
+dags/**/venv/
 airflow.db
 airflow.cfg
+CLAUDE.md
 CLAUDE.md
