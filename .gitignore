@@ -1,0 +1,14 @@
+astro
+.git
+.env
+airflow_settings.yaml
+logs/
+airflow.db
+airflow.cfg
+CLAUDE.md
+
+# Virtual environments em todas as subpastas
+.venv/
+**/.venv/
+venv/
+**/venv/

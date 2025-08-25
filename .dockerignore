@@ -1,0 +1,13 @@
+astro
+.git
+**/.env
+**/.env.*
+airflow_settings.yaml
+logs/
+**/.venv
+**/venv
+.venv
+venv
+airflow.db
+airflow.cfg
+CLAUDE.md
