@@ -1,0 +1,41 @@
+
+name: 'project_01'
+version: '1.0.0'
+
+profile: 'dbt-airflow-469721'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+models:
+  project_01:
+
+    staging:
+      schema: stg
+      materialized: table
+      tags: '[staging]'
+
+    intermediate:
+      schema: int
+      materialized: ephemeral
+      tags: '[intermediate]'
+
+    marts:
+      schema: marts
+      materialized: table
+      tags: '[marts]'
+
+seeds:
+  project_01:
+    schema: raw
+    tags: ['seed']
+
+# on-run-end: "{% if target.name == 'pr' %} drop schema {{ target.schema }} cascade {% endif %}"
