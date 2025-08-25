@@ -28,7 +28,7 @@ my_cosmos_dag = DbtDag(
         dbt_executable_path=f"{airflow_home}/dbt_venv/bin/dbt",
     ),
     # normal dag parameters
-    schedule="0 3 * * *",
+    schedule="0 21 * * *",
     start_date=datetime(2023, 1, 1),  # substitua pela data de inicio
     catchup=False,  # nao ira processar execucoes antigas
     dag_id="simple-dag",  # substitua pelo nome do arquivo .py
