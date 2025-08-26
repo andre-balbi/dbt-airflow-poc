@@ -44,7 +44,7 @@ my_cosmos_dag = DbtDag(
         dbt_executable_path=f"{airflow_home}/dbt_venv/bin/dbt",
     ),
     # parametros normais da dag
-    schedule="00 13 * * *",
+    schedule="00 09 * * *", 
     start_date=datetime(2023, 1, 1),  # substitua pela data de inicio
     catchup=False,  # nao ira processar execucoes antigas
     is_paused_upon_creation=True,  # Nasce pausada
