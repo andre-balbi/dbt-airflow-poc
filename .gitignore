@@ -1,11 +1,15 @@
-astro
 .git
 .env
+.DS_Store
 airflow_settings.yaml
-logs/
-airflow.db
+__pycache__/
+astro
+.venv
+airflow-webserver.pid
+webserver_config.py
 airflow.cfg
-CLAUDE.md
+airflow.db
+
 
 # Virtual environments em todas as subpastas
 .venv/

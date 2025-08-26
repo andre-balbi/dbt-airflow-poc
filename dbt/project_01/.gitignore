@@ -1,0 +1,16 @@
+target/
+dbt_packages/
+logs/
+.user.yml
+package-lock.yml
+venv/
+*.DS_Store
+.env
+*.json
+
+# Virtual environments em todas as subpastas
+.venv/
+**/.venv/
+venv/
+**/venv/
+CLAUDE.md
