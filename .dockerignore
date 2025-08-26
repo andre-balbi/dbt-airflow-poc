@@ -7,3 +7,11 @@ logs/
 airflow.db
 airflow.cfg
 CLAUDE.md
+
+# Virtual environments
+.venv/
+venv/
+dags/dbt/.venv/
+dags/dbt/venv/
+dags/dbt/**/.venv/
+dags/dbt/**/venv/

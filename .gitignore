@@ -1,3 +1,10 @@
+# Virtual environments em todas as subpastas
+.venv/
+**/.venv/
+venv/
+**/venv/
+
+# Files and folders
 .git
 .env
 .DS_Store
@@ -9,10 +16,5 @@ airflow-webserver.pid
 webserver_config.py
 airflow.cfg
 airflow.db
-
-
-# Virtual environments em todas as subpastas
-.venv/
-**/.venv/
-venv/
-**/venv/
+CLAUDE.md
+.gitmodules
