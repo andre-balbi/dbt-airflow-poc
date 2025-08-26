@@ -1,8 +1,11 @@
 from cosmos import DbtDag, ProjectConfig, ProfileConfig, ExecutionConfig
 from cosmos.profiles import GoogleCloudServiceAccountFileProfileMapping
+# from cosmos.profiles import GoogleCloudServiceAccountDictProfileMapping
 
 import os
+# import json
 from datetime import datetime
+
 
 airflow_home = os.environ["AIRFLOW_HOME"]
 
@@ -18,6 +21,19 @@ profile_config = ProfileConfig(
         }
     )
 )
+
+# profile_config = ProfileConfig(
+#     profile_name="dbt-airflow-469721",
+#     target_name="prod",
+#     profile_mapping=GoogleCloudServiceAccountDictProfileMapping(
+#         conn_id=None,
+#         profile_args={
+#             "project": "dbt-airflow-469721",
+#             "dataset": "prod",
+#             "keyfile_json": json.loads(os.environ["BIGQUERY_SERVICE_ACCOUNT_JSON"]),
+#         }
+#     )
+# )
 
 my_cosmos_dag = DbtDag(
     project_config=ProjectConfig(
