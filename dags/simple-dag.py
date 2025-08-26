@@ -27,10 +27,11 @@ my_cosmos_dag = DbtDag(
     execution_config=ExecutionConfig(
         dbt_executable_path=f"{airflow_home}/dbt_venv/bin/dbt",
     ),
-    # normal dag parameters
+    # parametros normais da dag
     schedule="00 13 * * *",
     start_date=datetime(2023, 1, 1),  # substitua pela data de inicio
     catchup=False,  # nao ira processar execucoes antigas
+    is_paused_upon_creation=True,  # Nasce pausada
     dag_id="simple-dag",  # substitua pelo nome do arquivo .py
     tags=["marketing"],  # tags para a dag (detalhes abaixo do nome da dag)
     default_args={"retries": 1},  # quantidade de tentativas em caso de falha
