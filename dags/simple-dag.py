@@ -6,9 +6,9 @@ from datetime import datetime
 
 airflow_home = os.environ["AIRFLOW_HOME"]
 
-profile_config = ProfileConfig(  # substitua pelo nome do profile_config adequado *
-    profile_name="dbt-airflow-469721",  # substitua pelo nome do projeto (pasta do dbt)
-    target_name="prod", # substitua pelo nome do target no seu profiles.yml
+profile_config = ProfileConfig(  
+    # profile_name="dbt-airflow-469721",  # substitua pelo nome do profile_config adequado *
+    # target_name="prod", # substitua pelo nome do target no seu profiles.yml
     profile_mapping=GoogleCloudServiceAccountFileProfileMapping(
         conn_id="my_google_cloud_platform_connection",
         profile_args={
