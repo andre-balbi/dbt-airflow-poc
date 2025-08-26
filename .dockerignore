@@ -8,9 +8,11 @@ airflow.db
 airflow.cfg
 CLAUDE.md
 
-# Virtual environments
+# Virtual environments em todas as subpastas
 .venv/
+**/.venv/
 venv/
+**/venv/
 dags/dbt/.venv/
 dags/dbt/venv/
 dags/dbt/**/.venv/

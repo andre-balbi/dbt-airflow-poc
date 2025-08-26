@@ -1,9 +1,3 @@
-# Virtual environments em todas as subpastas
-.venv/
-**/.venv/
-venv/
-**/venv/
-
 # Files and folders
 .git
 .env
@@ -18,3 +12,13 @@ airflow.cfg
 airflow.db
 CLAUDE.md
 .gitmodules
+
+# Virtual environments em todas as subpastas
+.venv/
+**/.venv/
+venv/
+**/venv/
+dags/dbt/.venv/
+dags/dbt/venv/
+dags/dbt/**/.venv/
+dags/dbt/**/venv/
