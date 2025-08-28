@@ -4,6 +4,7 @@
 .DS_Store
 airflow_settings.yaml
 __pycache__/
+**/__pycache__/
 astro
 .venv
 airflow-webserver.pid
@@ -18,7 +19,3 @@ CLAUDE.md
 **/.venv/
 venv/
 **/venv/
-dags/dbt/.venv/
-dags/dbt/venv/
-dags/dbt/**/.venv/
-dags/dbt/**/venv/
