@@ -11,7 +11,7 @@ profile_config = ProfileConfig(
     profile_name="dbt-airflow-469721",  # substitua pelo nome do profile_config adequado *
     target_name="prod", # substitua pelo nome do target no seu profiles.yml
     profile_mapping=GoogleCloudServiceAccountDictProfileMapping(
-        conn_id="project_01_gcloud_connection",  # substitua pelo nome da conexao criada no Airflow
+        conn_id="PROJECT_01_GCLOUD_CONN",  # substitua pelo nome da conexao criada no Airflow
         profile_args={
             "project": "dbt-airflow-469721",  # substitua pelo ID do seu projeto GCP
             "dataset": "prod" # substitua pelo prefixo (dev_, stg_, prod_) do seu dataset no BigQuery
