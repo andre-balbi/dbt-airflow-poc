@@ -1,39 +1,23 @@
 from cosmos import DbtDag, ProjectConfig, ProfileConfig, ExecutionConfig
-from cosmos.profiles import GoogleCloudServiceAccountFileProfileMapping
-# from cosmos.profiles import GoogleCloudServiceAccountDictProfileMapping
+from cosmos.profiles import GoogleCloudServiceAccountDictProfileMapping
 
 import os
-# import json
 from datetime import datetime
 
 
 airflow_home = os.environ["AIRFLOW_HOME"]
 
-profile_config = ProfileConfig(  
+profile_config = ProfileConfig(
     profile_name="dbt-airflow-469721",  # substitua pelo nome do profile_config adequado *
     target_name="prod", # substitua pelo nome do target no seu profiles.yml
-    profile_mapping=GoogleCloudServiceAccountFileProfileMapping(
-        conn_id="my_google_cloud_platform_connection",
+    profile_mapping=GoogleCloudServiceAccountDictProfileMapping(
+        conn_id="project_01_gcloud_connection",  # substitua pelo nome da conexao criada no Airflow
         profile_args={
             "project": "dbt-airflow-469721",  # substitua pelo ID do seu projeto GCP
-            "dataset": "prod",  # substitua pelo prefixo (dev_, stg_, prod_) do seu dataset no BigQuery
-            "keyfile": "/usr/local/airflow/dags/dbt/project_01/dbt-airflow-469721-26c5256c1285.json"  # substitua pelo caminho (docker) do seu arquivo de chave de conta de serviço
+            "dataset": "prod" # substitua pelo prefixo (dev_, stg_, prod_) do seu dataset no BigQuery
         }
     )
 )
-
-# profile_config = ProfileConfig(
-#     profile_name="dbt-airflow-469721",
-#     target_name="prod",
-#     profile_mapping=GoogleCloudServiceAccountDictProfileMapping(
-#         conn_id=None,
-#         profile_args={
-#             "project": "dbt-airflow-469721",
-#             "dataset": "prod",
-#             "keyfile_json": json.loads(os.environ["BIGQUERY_SERVICE_ACCOUNT_JSON"]),
-#         }
-#     )
-# )
 
 my_cosmos_dag = DbtDag(
     project_config=ProjectConfig(
@@ -45,10 +29,11 @@ my_cosmos_dag = DbtDag(
     ),
     # parametros normais da dag
     schedule="00 09 * * *", 
-    start_date=datetime(2023, 1, 1),  # substitua pela data de inicio
+    start_date=datetime(2023, 1, 1),  
     catchup=False,  # nao ira processar execucoes antigas
     is_paused_upon_creation=True,  # Nasce pausada
     dag_id="simple-dag",  # substitua pelo nome do arquivo .py
     tags=["marketing"],  # tags para a dag (detalhes abaixo do nome da dag)
     default_args={"retries": 1},  # quantidade de tentativas em caso de falha
+    max_active_tasks=2,
 )
